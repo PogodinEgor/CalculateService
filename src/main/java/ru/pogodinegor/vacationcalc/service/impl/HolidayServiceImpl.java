@@ -23,8 +23,9 @@ import java.util.List;
 public class HolidayServiceImpl implements HolidayService {
 
     private final RestTemplate restTemplate;
+
     @Value("${spring.url.date.nager}")
-    private final String HOLIDAY_URL;
+    private String HOLIDAY_URL;
 
 
     /**
