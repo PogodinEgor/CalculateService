@@ -25,7 +25,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
                 )
         )
 )
-//@EnableSwagger2
+
 @SpringBootApplication
 public class VacationCalcApplication {
 
