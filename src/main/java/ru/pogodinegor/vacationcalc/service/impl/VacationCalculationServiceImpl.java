@@ -3,7 +3,6 @@ package ru.pogodinegor.vacationcalc.service.impl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.pogodinegor.vacationcalc.dto.VacationCalculationResponse;
-import ru.pogodinegor.vacationcalc.dto.nager.date.api.Holiday;
 import ru.pogodinegor.vacationcalc.exception.NotValidAverageSalaryException;
 import ru.pogodinegor.vacationcalc.exception.NotValidVacationDaysException;
 import ru.pogodinegor.vacationcalc.service.VacationCalculationService;
@@ -12,6 +11,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -92,18 +92,13 @@ public class VacationCalculationServiceImpl implements VacationCalculationServic
      * @return true, если указанная дата является праздником; иначе false.
      */
     public boolean isHoliday(LocalDate date) {
-        return getHolidays().contains(date);
-    }
+        String currentMonthDayStr = date.format(DateTimeFormatter.ofPattern("MM-dd"));
 
-    /**
-     * Получает список всех праздничных дней.
-     *
-     * @return Список дат праздничных дней.
-     */
-    public List<LocalDate> getHolidays() {
-        return holidayServiceImpl.getAllHolidays().stream()
-                .map(Holiday::getDate)
+        List<String> holidaysMonthDayStr = holidayServiceImpl.getAllHolidays().stream()
+                .map(holiday -> holiday.getDate().format(DateTimeFormatter.ofPattern("MM-dd")))
                 .collect(Collectors.toList());
+
+        return holidaysMonthDayStr.contains(currentMonthDayStr);
     }
 
     /**
