@@ -17,8 +17,6 @@ import static org.mockito.Mockito.when;
 
 
 public class VacationCalculationServiceImplTests {
-
-
     @Test
    void testCalculateVacationPayWithHolidays() {
         HolidayServiceImpl holidayServiceMock = Mockito.mock(HolidayServiceImpl.class);
