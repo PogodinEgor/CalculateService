@@ -111,7 +111,6 @@ public class VacationCalculationServiceImpl implements VacationCalculationServic
         if (averageSalary.compareTo(BigDecimal.ZERO) <= 0) {
             throw new NotValidAverageSalaryException("Средняя зарплата не может быть равна нулю или быть меньше нуля!");
         }
-
     }
 
     /**
