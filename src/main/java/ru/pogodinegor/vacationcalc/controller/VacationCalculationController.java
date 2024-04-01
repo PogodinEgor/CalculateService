@@ -21,7 +21,6 @@ import java.time.LocalDate;
 public class VacationCalculationController {
     private final VacationCalculationServiceImpl vacationCalculationServiceImpl;
 
-
     /**
      * Рассчитывает сумму отпускных на основе среднемесячной зарплаты, количества дней отпуска и, опционально, даты начала отпуска.
      * Если дата начала отпуска указана, расчет учитывает выходные и праздничные дни.

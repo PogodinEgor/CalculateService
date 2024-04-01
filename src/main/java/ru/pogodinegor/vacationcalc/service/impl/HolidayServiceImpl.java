@@ -27,7 +27,6 @@ public class HolidayServiceImpl implements HolidayService {
     @Value("${spring.url.date.nager}")
     private String HOLIDAY_URL;
 
-
     /**
      * Получает список всех праздников на текущий год для России.
      *
