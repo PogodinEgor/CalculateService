@@ -112,7 +112,6 @@ public class VacationCalculationServiceImpl implements VacationCalculationServic
             throw new NotValidAverageSalaryException("Средняя зарплата не может быть равна нулю или быть меньше нуля!");
         }
     }
-
     /**
      * Проверяет корректность количества отпускных дней.
      *
