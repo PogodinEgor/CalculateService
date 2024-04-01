@@ -34,7 +34,6 @@ public class VacationCalculationServiceImplTests {
 
         VacationCalculationServiceImpl service = new VacationCalculationServiceImpl(holidayServiceMock);
 
-
         VacationCalculationResponse response = service.calculateVacationPayWithHolidays(averageSalary, vacationDays, startVacationDay);
 
         // Проверка
