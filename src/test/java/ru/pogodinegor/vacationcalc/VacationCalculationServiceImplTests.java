@@ -50,9 +50,7 @@ public class VacationCalculationServiceImplTests {
         BigDecimal averageSalary = new BigDecimal("1000");
         int vacationDays = 10;
 
-
         VacationCalculationResponse response = service.calculateVacationPayWithoutHolidays(averageSalary, vacationDays);
-
 
         BigDecimal expectedVacationPay = new BigDecimal("341.30");
         assertEquals(expectedVacationPay, response.getVacationPay());
